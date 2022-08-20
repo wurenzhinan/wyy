@@ -1,0 +1,25 @@
+h2 {
+  text-align: center;
+}
+.paihang-item {
+  margin-top: 2vh;
+  position: relative;
+}
+.paihang-item p {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: white;
+  margin: 0;
+}
+.paihang-item ol {
+  position: absolute;
+  top: 1.5vh;
+  left: 35vw;
+  white-space: nowrap;
+}
+.footer {
+  position: relative;
+  top: 5vh;
+  text-align: center;
+}
