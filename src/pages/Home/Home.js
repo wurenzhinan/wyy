@@ -1,22 +1,18 @@
 import { useEffect, useState } from 'react'
-import React from 'react'
 import { http } from '../../utils/http'
-import { Input } from 'antd'
 import './Home.css'
 import { v4 as uuidv4 } from 'uuid'
-
+import { Input } from 'antd'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import Phb from '../../components/paihangbang'
 
 const { Search } = Input
-const onSearch = (value) => console.log(value)
 function Home () {
-  const [search, setSearch] = useState()
-  // useEffect(() => {
-  //   const loadList = async () => {
-  //     const res = await http.get('/search/hot/detail')
-  //     setSearch(res.data)
-  //   }
-  //   loadList()
-  // }, [])
+  const navigate = useNavigate()
+  const onFocus = () => {
+    navigate('/search')
+  }
   const [all, setAll] = useState([])
   useEffect(() => {
     const loadList = async () => {
@@ -26,6 +22,10 @@ function Home () {
     }
     loadList()
   }, [])
+  //push跳转 以params参数为例，navigate默认开启push模式
+  const pushShow = (id) => {
+    navigate(`/${id}`)
+  }
   return (
     <>
       <div className="nav">
@@ -33,7 +33,7 @@ function Home () {
         <Search
           placeholder="搜索歌曲"
           allowClear
-          onSearch={onSearch}
+          onFocus={onFocus}
           style={{
             width: "100%",
           }}
@@ -41,7 +41,7 @@ function Home () {
       </div>
       <div className='paihang'>
         {all.map(item => (
-          <div className='paihang-item' key={uuidv4()}>
+          <div className='paihang-item' key={uuidv4()} onClick={() => pushShow(item.id)}>
             <img
               src={item.coverImgUrl} alt="" style={{ witdh: "12vw", height: "12vh" }} />
             <p>{item.updateFrequency}</p>
