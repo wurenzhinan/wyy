@@ -85,6 +85,7 @@
     ]
   },
   "devDependencies": {
+    "http-proxy-middleware": "^2.0.6",
     "postcss-loader": "^7.0.1",
     "postcss-px-to-viewport": "^1.1.1"
   },

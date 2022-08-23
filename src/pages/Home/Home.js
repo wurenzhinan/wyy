@@ -24,7 +24,9 @@ function Home () {
   }, [])
   //push跳转 以params参数为例，navigate默认开启push模式
   const pushShow = (id) => {
-    navigate(`/${id}`)
+    let ids = id.toString()
+    console.log(ids)
+    navigate(`/track?id=${ids}`)
   }
   return (
     <>

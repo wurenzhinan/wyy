@@ -9,15 +9,15 @@ import { useNavigate } from 'react-router-dom'
 function Go () {
   const navigate = useNavigate()
   //前进
-  const forward = () => {
-    navigate(1)
+  const backWard = () => {
+    navigate(-1)
   }
   const goHome = () => {
     navigate('/')
   }
   return (
     <Space>
-      <LeftOutlined onClick={forward} />
+      <LeftOutlined onClick={backWard} />
       <HomeOutlined onClick={goHome} />
     </Space>
   )
