@@ -1,5 +1,5 @@
 import { Input } from 'antd'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react'
 import { http } from '../../utils/http'
 import './index.css'
@@ -10,6 +10,8 @@ import {
   PlayCircleOutlined
 } from '@ant-design/icons'
 import Go from '../../components/go'
+import { UrlContext } from "../../App"
+
 
 
 const { Search } = Input
@@ -38,7 +40,7 @@ function AllSearch () {
         } else {
           alert("不存在")
         }
-        // localStorage.setItem(value)
+        // localStorage.setItem("list",value)
         // setList([])
         // console.log(list)
       }
@@ -71,14 +73,22 @@ function AllSearch () {
     list = []
   }
   const navigate = useNavigate()
-  const pushShow = (id) => {
+  const { dispactchMuscicUrl } = useContext(UrlContext)
+  const pushShow = (id, url, name) => {
     let ids = id.toString()
+    localStorage.setItem("picUrl", url)
+    localStorage.setItem("name", name)
+    dispactchMuscicUrl(url)
     console.log(ids)
-    navigate(`/search/per?id=${ids}`)
+    navigate(`/per?id=${ids}`)
+
+  }
+  const onClick = (e) => {
+    console.log(e)
   }
   return (
-    <>
-      <Go />
+    <div className='body'>
+
       <div className="nav">
         <h2>搜索</h2>
         <Search
@@ -101,7 +111,7 @@ function AllSearch () {
             <p>热搜榜</p>
             <ol>
               {search.map(item => (
-                <li key={search.indexOf(item)}>
+                <li key={search.indexOf(item)} onClick={(e) => onClick(e)}>
                   <span>{`${search.indexOf(item) + 1} `}</span>
                   <span><p>{item.searchWord}</p><p>{item.content}</p></span>
                   <span>{item.score}</span>
@@ -118,11 +128,11 @@ function AllSearch () {
               <p>{item.name}</p>
               <p>{`${item.artists[0].name}-${item.album.name}`}</p>
             </span>
-            <span><PlayCircleOutlined onClick={() => pushShow(item.al.id)} /></span>
+            <span><PlayCircleOutlined onClick={() => pushShow(item.id, item.album.artist.img1v1Url, item.name)} /></span>
           </li>))}
         </div>)
       }
-    </>
+    </div>
   )
 }
 export default AllSearch

@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid'
 import { Input } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Phb from '../../components/paihangbang'
 
 const { Search } = Input
 function Home () {
@@ -29,7 +28,7 @@ function Home () {
     navigate(`/track?id=${ids}`)
   }
   return (
-    <>
+    <div className='body'>
       <div className="nav">
         <h2>网易云音乐</h2>
         <Search
@@ -56,7 +55,7 @@ function Home () {
       <div className="footer">
         点击了解<a href="https://st.music.163.com/official-terms/privacy">《隐私保护指引》</a>
       </div>
-    </>
+    </div>
   )
 }
 export default Home

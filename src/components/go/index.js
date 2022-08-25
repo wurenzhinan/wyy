@@ -5,6 +5,7 @@ import {
 import { Space } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import './index.css'
 
 function Go () {
   const navigate = useNavigate()
@@ -16,10 +17,10 @@ function Go () {
     navigate('/')
   }
   return (
-    <Space>
-      <LeftOutlined onClick={backWard} />
-      <HomeOutlined onClick={goHome} />
-    </Space>
+    <span className='go'>
+      <LeftOutlined onClick={backWard} style={{ paddingLeft: '1.8604166666666667vw', paddingRight: '1.518518518518516vh' }} />|
+      <HomeOutlined onClick={goHome} style={{ paddingLeft: '4vw' }} />
+    </span>
   )
 }
 

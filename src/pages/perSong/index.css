@@ -1,0 +1,111 @@
+.go {
+  position: relative;
+  top: 0px;
+  float: left;
+
+  z-index: 99;
+}
+.name {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: 120px;
+  display: flex;
+  z-index: 999;
+  color: white;
+  font-size: 1rem;
+}
+.container {
+  width: 100%;
+  height: 100%;
+}
+.bg {
+  /* 固定定位 */
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  background-size: cover;
+  background-position: center;
+
+  /* 模糊滤镜*/
+  filter: blur(40px);
+  z-index: 0;
+}
+/* 半透明白色遮罩层 */
+.bg-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(15, 3, 3, 0.836);
+  z-index: 0;
+}
+.player {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 370px;
+}
+.play-point {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  margin: 0px -12px;
+  z-index: 10;
+  width: 100px;
+  transform-origin: 20px 20px;
+}
+.album-cover {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  box-shadow: 0 0 20px rgb(145, 145, 145);
+  border-radius: 48%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background-position: 247px 924px;
+  transition: all 0.1s;
+  background: url(../../imags/play_disc.png) no-repeat;
+  background-size: cover;
+}
+.cover {
+  position: absolute;
+  top: 9.4vw;
+  left: 9.6vw;
+  width: 34vw;
+  height: 34vw;
+  border-radius: 50%;
+}
+.pause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+  border-radius: 50%;
+  z-index: 999;
+  background-color: rgba(18, 16, 16, 0.332);
+}
+.lyric {
+  position: relative;
+  top: 250px;
+  left: 40%;
+  z-index: 999;
+  color: #b8b8b8;
+  height: 300px;
+  overflow: hidden;
+  margin-top: 15px;
+  line-height: 80px;
+}
+.recommend {
+  color: white;
+  margin-top: 110px;
+  width: 100%;
+  height: auto;
+}

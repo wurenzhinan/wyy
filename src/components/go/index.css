@@ -1,0 +1,11 @@
+.go {
+  margin-top: 2vh;
+  margin-left: 2.5vw;
+  display: block;
+  background: rgba(24, 5, 5, 0.664);
+  border-radius: 20%;
+  border: 1px solid white;
+  width: 20.11vw;
+  color: white;
+  font-size: 1rem;
+}
