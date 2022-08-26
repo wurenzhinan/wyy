@@ -14,10 +14,16 @@ export { UrlContext }
 function App () {
   const [music, setMusic] = useState({ url: "" })
   const [name, setName] = useState('')
+  // const [url, setUrl] = useState('')
+  // setUrl(window.location.href)
+  // console.log(url)
+  // console.log(url === 'http://localhost:3000')
+  // console.log(typeof url)
   return (
     <BrowserRouter>
       <div className="App">
         <Go />
+        {/* {url == 'http://localhost:3000' ? '' : <Go />} */}
         <UrlContext.Provider value={{ musicUrl: music, dispactchMuscicUrl: setMusic, name: name, setName: setName }} >
           <Routes>
             <Route path="/" element={<Home />}></Route>

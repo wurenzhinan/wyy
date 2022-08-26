@@ -1,7 +1,76 @@
-li {
-  list-style: none;
-}
 .body {
   width: 90%;
   margin: auto;
+}
+
+.hot-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 5.1rem;
+  width: 100%;
+  margin-top: 30px;
+}
+.pm {
+  font-size: 1rem;
+}
+.info {
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: absolute;
+  width: 500px;
+  top: -100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info .name {
+  width: 500px;
+  white-space: nowrap;
+  font-size: 1rem;
+  color: black;
+}
+.info .name img {
+  margin: 10px;
+  width: 40px;
+  height: 30px;
+}
+.info .content {
+  white-space: nowrap;
+  margin: 10px;
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  font-size: 0.1rem;
+  color: rgb(122, 122, 122);
+}
+.bangdan p {
+  color: rgb(82, 82, 82);
+  font-size: 1.2rem;
+}
+.hs-hd {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.search-item {
+  position: relative;
+  left: -80px;
+  display: flex;
+  justify-content: space-between;
+  height: 5.1rem;
+  width: 100%;
+  margin-top: 80px;
+  white-space: no-wrap;
+}
+.search-item .info {
+  width: 500px;
+}
+.bof {
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  margin-top: -20px;
+  color: rgb(122, 122, 122);
 }

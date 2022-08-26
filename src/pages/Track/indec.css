@@ -2,3 +2,111 @@
   width: 90%;
   margin: auto;
 }
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100vw;
+  height: 90vw;
+  z-index: 0;
+  filter: blur(10px);
+}
+.trac {
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  top: 30px;
+  left: 45%;
+}
+.trac-img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  z-index: 10;
+  top: 170px;
+  left: 30px;
+  border-radius: 15px;
+}
+.liulan {
+  position: absolute;
+  z-index: 10;
+  top: 190px;
+  font-size: 1rem;
+  left: 150px;
+  color: white;
+}
+.tr-hd-name {
+  position: absolute;
+  top: 170px;
+  left: 350px;
+  z-index: 10;
+  font-size: 1.3rem;
+  color: white;
+}
+.trac-header .logo span {
+  height: 20px;
+  position: absolute;
+  top: 250px;
+  left: 300px;
+  z-index: 10;
+  font-size: 1rem;
+  color: white;
+}
+.trac-header .logo img {
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+  border-radius: 50%;
+}
+.trac-header p {
+  position: absolute;
+  width: 350px;
+  top: 330px;
+  left: 300px;
+  z-index: 10;
+  color: white;
+}
+.trac-body {
+  width: 100vw;
+  position: absolute;
+  top: 600px;
+  left: 0;
+  background-color: white;
+  border-radius: 15px;
+  color: rgb(59, 59, 59);
+}
+.trac-body .trb-hd {
+  margin: 30px 20px;
+  font-size: 1.2rem;
+}
+.trac-body .trb-hd > span {
+  margin: 0 5px;
+}
+.trac-body .trb-hd .count {
+  font-size: 0.5rem;
+  color: rgb(194, 194, 194);
+}
+.trac-body .trb-hd .trac-body .songs {
+  margin: 60px 20px;
+}
+.song-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 5.1rem;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.song-item .pm {
+  padding-top: 40px;
+}
+.song-item .info {
+  position: absolute;
+  top: -50px;
+}
+.song-item .bof {
+  padding-right: 100px;
+  padding-top: 60px;
+}

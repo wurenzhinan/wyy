@@ -5,6 +5,7 @@
 
   z-index: 99;
 }
+
 .name {
   float: left;
   position: relative;
@@ -72,7 +73,7 @@
   background: url(../../imags/play_disc.png) no-repeat;
   background-size: cover;
 }
-.cover {
+.album-cover .cover {
   position: absolute;
   top: 9.4vw;
   left: 9.6vw;
@@ -92,10 +93,10 @@
   z-index: 999;
   background-color: rgba(18, 16, 16, 0.332);
 }
-.lyric {
-  position: relative;
-  top: 250px;
-  left: 40%;
+.ly {
+  position: absolute;
+  top: 600px;
+  left: 30%;
   z-index: 999;
   color: #b8b8b8;
   height: 300px;
@@ -103,9 +104,162 @@
   margin-top: 15px;
   line-height: 80px;
 }
-.recommend {
-  color: white;
-  margin-top: 110px;
+.re-bof {
+  position: absolute;
+  margin-top: 15px;
+  left: 600px;
+  width: 40px;
+  height: 40px;
+}
+.re-item-pc {
+  position: absolute;
+  left: 100px;
+  color: rgb(214, 214, 214);
+  font-size: 0.2rem;
+  bottom: 0;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.re-item-title {
+  position: absolute;
+  font-size: 1rem;
+  left: 100px;
+  width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.re-item-cover {
+  height: 50px;
+  border-radius: 5px;
+  width: 80px;
+  height: 80px;
+}
+.re-item {
+  margin-left: 20px;
+  position: relative;
+  margin-top: 20px;
+  width: 80px;
+  height: 80px;
+}
+.re-body {
+  margin-top: 20px;
   width: 100%;
   height: auto;
+}
+.re-key span {
+  position: absolute;
+  font-size: 12px;
+  top: 4px;
+  left: 28px;
+  margin-left: 10px;
+}
+.re-key img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+.re-key {
+  position: absolute;
+  right: 0;
+  margin-right: 50px;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgb(207, 207, 207);
+  box-sizing: border-box;
+  line-height: 40px;
+}
+.re-title {
+  font-size: 1rem;
+}
+.re-header {
+  position: relative;
+  margin-top: 400px;
+  margin-left: 20px;
+  width: 100%;
+  line-height: 50px;
+  height: 50px;
+}
+.recommend {
+  color: white;
+  margin-top: 600px;
+  width: 100%;
+  height: auto;
+}
+.comment {
+  margin: 40px;
+  height: 800px;
+}
+.co-header {
+  position: absolute;
+  font-size: 1rem;
+  color: white;
+}
+.co-body {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+.co-item {
+  position: relative;
+  float: right;
+  width: 100%;
+  height: auto;
+  margin-top: 80px;
+}
+.user-hd {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+}
+.user {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+.user-name {
+  position: absolute;
+  top: 0;
+  font-size: 0.8rem;
+  left: 100px;
+  color: rgb(218, 218, 218);
+}
+.user-time {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  color: rgb(179, 179, 179);
+  font-size: 0.5rem;
+}
+.user-likes {
+  position: absolute;
+  right: 30px;
+  font-size: 15px;
+  top: 8px;
+  color: rgb(197, 197, 197);
+}
+.dz {
+  position: absolute;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  top: 5px;
+}
+.user-bd {
+  margin-top: 70px;
+  margin-left: 100px;
+  height: auto;
+  width: 100%;
+  color: white;
+  font-size: 0.9rem;
+  padding-top: 5px;
+  line-height: 1.6rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(168, 168, 168);
 }

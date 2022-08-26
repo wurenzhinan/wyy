@@ -2,7 +2,6 @@ import {
   HomeOutlined,
   LeftOutlined
 } from '@ant-design/icons'
-import { Space } from 'antd'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import './index.css'

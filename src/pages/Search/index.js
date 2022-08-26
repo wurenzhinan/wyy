@@ -30,7 +30,9 @@ function AllSearch () {
   const [songs, setSongs] = useState([])
   console.log(songs)
   const [list, setList] = useState([])
+  const [flag, setFlag] = useState(false)
   const onSearch = (value) => {
+    setFlag(true)
     if (value) {
       const loadList = async () => {
         const res = await http.get(`/search?keywords=${value}`)
@@ -49,11 +51,10 @@ function AllSearch () {
     }
   }
   let onChangeValueToSearch = function (e) {
-    console.log(e)
+    setFlag(false)
     let { value } = e.target
     let timer = null
     return function () {
-      console.log(123)
       if (timer) clearTimeout(timer)
       timer =
         setTimeout(async () => {
@@ -83,8 +84,29 @@ function AllSearch () {
     navigate(`/per?id=${ids}`)
 
   }
+  const setHistoryItem = (keyword) => {
+    let { historyItems } = localStorage
+    console.log("historyItems", historyItems)
+    if (historyItems == undefined) {
+      historyItems = keyword
+    } else {
+      historyItems = keyword + '|' + historyItems.split('|').filter(e => e != keyword).join('|')
+      localStorage.historyItems = historyItems
+    }
+    console.log(historyItems)
+    console.log(localStorage.getItem('historyItems'))
+
+  }
   const onClick = (e) => {
     console.log(e)
+    // e.stopPropagation()
+    // console.log(e)
+    // if (e.target.nodeName != 'DIV') {
+    //   console.log(e.target.nodeName)
+    //   // e.stopPropagation()
+    // } else {
+    //   console.log(e)
+    // }
   }
   return (
     <div className='body'>
@@ -104,32 +126,32 @@ function AllSearch () {
       {!isNaN(Number(songs)) ?
         (<div className="body1">
           <div className="history">
-            <div><span>历史记录</span><DeleteOutlined onClick={delt} /></div>
+            <div className='hs-hd'><span>历史记录</span><DeleteOutlined onClick={delt} /></div>
             {list.map(item => <span key={uuidv4()}>{item}</span>)}
           </div>
           <div className="bangdan">
             <p>热搜榜</p>
-            <ol>
-              {search.map(item => (
-                <li key={search.indexOf(item)} onClick={(e) => onClick(e)}>
-                  <span>{`${search.indexOf(item) + 1} `}</span>
-                  <span><p>{item.searchWord}</p><p>{item.content}</p></span>
-                  <span>{item.score}</span>
-                </li>
+            <div className='hot'>
+              {search.map((item, index) => (
+                <div key={index} className='hot-item'>
+                  <span className='pm' style={index < 3 ? { color: 'red' } : {}}>{index + 1}</span>
+                  <span className='info' onClick={(e) => setHistoryItem(e.target.innerText)}><span className='name'>{item.searchWord}{index == 0 ? <img src='https://p1.music.126.net/2zQ0d1ThZCX5Jtkvks9aOQ==/109951163968000522.png' /> : ''}</span><span className='content'>{item.content}</span></span>
+                  <span className='score'>{item.score}</span>
+                </div>
               ))}
-            </ol>
+            </div>
           </div>
         </div>)
         :
         (<div className="body2">
           {songs.map(item =>
-          (<li key={item.id} >
-            <span>
-              <p>{item.name}</p>
-              <p>{`${item.artists[0].name}-${item.album.name}`}</p>
+          (<div className='search-item' key={item.id} >
+            <span className='info'>
+              <span className='name'>{item.name}</span>
+              <span className='content'>{`${item.artists[0].name}-${item.album.name}`}</span>
             </span>
-            <span><PlayCircleOutlined onClick={() => pushShow(item.id, item.album.artist.img1v1Url, item.name)} /></span>
-          </li>))}
+            <span className='bof'><PlayCircleOutlined onClick={() => pushShow(item.id, item.album.artist.img1v1Url, item.name)} /></span>
+          </div>))}
         </div>)
       }
     </div>
